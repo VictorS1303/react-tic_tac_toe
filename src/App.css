@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100, 200, 300, 400, 500, 600, 700, 800, 900");
+
+:root {
+    /* Colors */
+    --body-background-color: #f9f9f9;
+    --primary-text-color: #050507;
+    --accent-color: #fcac66;
+    --scroll-to-top-btn-background-color: #f9f9f9;
+
+    /* Font Sizes */
+    --heading-one-font-size: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
+    --heading-two-font-size: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    --heading-three-font-size: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
+    --heading-four-font-size: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
+    --heading-five-font-size: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
+    --paragraph-font-size: clamp(0.8333rem, 0.7754rem + 0.2899vw, 1rem);
+}
+
+body
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: var(--heading-one-font-size);
+}
+
+h2 {
+    font-size: var(--heading-two-font-size);
+}
+
+
+h3 {
+    font-size: var(--heading-three-font-size);
+}
+
+h4 {
+    font-size: var(--heading-four-font-size);
+}
+
+h5 {
+    font-size: var(--heading-five-font-size);
+}
+
+h6 {
+    font-size: var(--heading-six-font-size);
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--paragraph-font-size);
+    line-height: 2;
+}
