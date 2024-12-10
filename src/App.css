@@ -2,10 +2,11 @@
 
 :root {
     /* Colors */
-    --body-background-color: #f9f9f9;
-    --primary-text-color: #050507;
-    --accent-color: #fcac66;
-    --scroll-to-top-btn-background-color: #f9f9f9;
+    --body-background-color: #191972;
+    --primary-text-color: #fefea3;
+    --secondary-text-color: #fff;
+    --strikethrough-background-color: #ff8c00;
+    --reset-btn-background-color: #0074a6;
 
     /* Font Sizes */
     --heading-one-font-size: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
@@ -14,11 +15,17 @@
     --heading-four-font-size: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
     --heading-five-font-size: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
     --paragraph-font-size: clamp(0.8333rem, 0.7754rem + 0.2899vw, 1rem);
+    --tile-font-size: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
+    --game-over-text-font-size: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
 }
 
 body
 {
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--body-background-color);
 }
 
 h1,
@@ -29,6 +36,8 @@ h5,
 h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    text-align: center;
+    color: var(--secondary-text-color);
 }
 
 h1 {
@@ -60,4 +69,119 @@ p {
     font-family: 'Roboto', sans-serif;
     font-size: var(--paragraph-font-size);
     line-height: 2;
+}
+
+/* Board */
+.board
+{
+    position: relative;
+    display: grid;
+    grid-template: repeat(3, 100px) / repeat(3, 100px);
+    cursor: pointer;
+}
+
+/* Tile */
+.tile
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--tile-font-size);
+    color: currentColor;
+}
+
+/* Borders */
+.right-border
+{
+    border-right: .2em solid var(--border-color);
+}
+
+.bottom-border
+{
+    border-bottom: .2em solid var(--border-color);
+}
+
+/* Players */
+.x-hover:hover::before
+{
+    content: 'X';
+    opacity: .4;
+}
+
+.o-hover:hover::before
+{
+    content: 'O';
+    opacity: .4;
+}
+
+/* Strikethrough */
+.strikethrough
+{
+    position: absolute;
+    background-color: var(--strikethrough-background-color);
+}
+
+/* Row & Column Strikethroughs */
+.strike-row-one,
+.row-column-one
+{
+    height: 4px;
+    width: 100%;
+    top: 15%;
+}
+
+.strike-row-two,
+.strike-column-two
+{
+    height: 4px;
+    width: 100%;
+    top: 48%;
+}
+
+.strike-row-three,
+.strike-column-three
+{
+    height: 4px;
+    width: 100%;
+    top: 83%;
+}
+
+/* Diagonal Strikethroughs */
+.strike-diagonal-one
+{
+    height: 4px;
+    width: 90%;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.strike-diagonal-two
+{
+    height: 4px;
+    width: 90%;
+    top: 50%;
+    left: 5%;
+    transform: skewY(-45deg);
+}
+
+/* Game Over */
+.game-over
+{
+    text-align: center;
+    border: 8px dotted var(--border-color);
+    margin-top: 50px;
+    padding: 10px;
+    font-size: var(--game-over-text-font-size);
+}
+
+/* Reset Button */
+.reset-btn
+{
+    padding: 20px;
+    margin-top: 50px;
+    color: var(--secondary-text-color);
+    background-color: var(--reset-btn-background-color);
+    width: 100%;
+    font-size: var(--game-over-text-font-size);
 }
